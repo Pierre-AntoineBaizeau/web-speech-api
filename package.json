@@ -4,9 +4,20 @@
   "description": "Voice commands for web applications.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"No tests specified\" && exit 1"
+    "test": "jest"
   },
-  "keywords": ["voice", "command", "recognition"],
-  "author": ["Adil EL MOBACHI", "Pierre-Antoine BAIZAEAU"],
-  "license": "MIT"
+  "keywords": [
+    "voice",
+    "command",
+    "recognition"
+  ],
+  "author": [
+    "Adil EL MOBACHI",
+    "Pierre-Antoine BAIZAEAU"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jsdoc": "^4.0.2"
+  }
 }
