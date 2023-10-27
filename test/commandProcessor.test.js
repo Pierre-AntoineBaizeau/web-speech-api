@@ -1,4 +1,4 @@
-import { commands, processCommand } from "../src/commandProcessor"; // Remplacez 'your-file' par le nom de votre fichier
+import { commands, processCommand } from "../src/main"; // Remplacez 'your-file' par le nom de votre fichier
 
 // Mock de la fonction feedbackFunction
 const mockFeedbackFunction = jest.fn();
