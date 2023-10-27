@@ -1,15 +1,59 @@
-import commandProcessor from "../src/commandProcessor.js";
+import { commands, processCommand } from "../src/commandProcessor"; // Remplacez 'your-file' par le nom de votre fichier
 
-describe("commandProcessor", () => {
-  it("returns a function for valid commands", () => {
-    const validCommand = "go back";
-    const result = commandProcessor(validCommand);
-    expect(typeof result).toBe("function");
+// Mock de la fonction feedbackFunction
+const mockFeedbackFunction = jest.fn();
+
+// Mock des méthodes globales utilisées dans les commandes
+global.window = Object.create(window);
+window.history = { back: jest.fn() };
+window.scrollBy = jest.fn();
+window.scrollTo = jest.fn();
+Object.defineProperty(window, "document", {
+  value: {
+    body: {
+      scrollHeight: 1000,
+      innerText: "test",
+      style: {
+        fontSize: "16px",
+        backgroundColor: "",
+        color: "",
+      },
+    },
+    addEventListener: jest.fn(),
+  },
+});
+
+describe("commands", () => {
+  it("should have specific commands defined", () => {
+    expect(commands["go back"]).toBeDefined();
+    expect(commands["scroll down"]).toBeDefined();
+    // Ajoutez ici des tests pour les autres commandes
+  });
+});
+
+describe("processCommand", () => {
+  it("should call the correct command", () => {
+    window.history.back = jest.fn();
+
+    processCommand("go back", mockFeedbackFunction);
+    expect(window.history.back).toHaveBeenCalled();
+    expect(mockFeedbackFunction).toHaveBeenCalledWith(
+      "Executed command: go back"
+    );
+
+    processCommand("scroll down", mockFeedbackFunction);
+    expect(window.history.back).toHaveBeenCalled();
+    expect(mockFeedbackFunction).toHaveBeenCalledWith(
+      "Executed command: scroll down"
+    );
+
+    // Ajoutez ici des tests pour les autres commandes
   });
 
-  it("returns null for invalid commands", () => {
-    const invalidCommand = "fly to the moon";
-    const result = commandProcessor(invalidCommand);
-    expect(result).toBeNull();
+  it("should give feedback when command is not understood", () => {
+    processCommand("unknown command", mockFeedbackFunction);
+    expect(mockFeedbackFunction).toHaveBeenCalledWith(
+      "Sorry, I did not understand that command."
+    );
   });
 });
