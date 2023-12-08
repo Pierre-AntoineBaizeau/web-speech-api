@@ -1,6 +1,6 @@
 {
   "name": "webvoicehub",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Voice commands for web applications.",
   "main": "main.js",
   "type": "module",
