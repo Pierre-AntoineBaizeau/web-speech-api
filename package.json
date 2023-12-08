@@ -3,8 +3,10 @@
   "version": "1.3.0",
   "description": "Voice commands for web applications.",
   "main": "main.js",
+  "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node src/main.js"
   },
   "keywords": [
     "voice",
@@ -13,7 +15,7 @@
   ],
   "author": [
     "Adil EL MOBACHI",
-    "Pierre-Antoine BAIZAEAU"
+    "Pierre-Antoine BAIZEAU"
   ],
   "license": "MIT",
   "devDependencies": {

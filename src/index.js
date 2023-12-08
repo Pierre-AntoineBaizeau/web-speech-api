@@ -1,9 +1,15 @@
 import { findWordInPage } from "./utils.js";
 import { commandProcessor } from "./commandProcessor.js";
 
-export const webVoiceHub = document
-  .getElementById("startListening")
-  .addEventListener("click", function () {
+export function webVoiceHub() {
+  const startListeningButton = document.getElementById("startListening");
+
+  if (!startListeningButton) {
+    console.error("Element with ID 'startListening' not found.");
+    return;
+  }
+
+  startListeningButton.addEventListener("click", function () {
     // Vérifiez si la reconnaissance vocale est supportée par le navigateur
     if (
       !("SpeechRecognition" in window) &&
@@ -39,3 +45,4 @@ export const webVoiceHub = document
 
     recognition.start(); // Commencez la reconnaissance
   });
+}
