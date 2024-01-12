@@ -43,7 +43,7 @@ npm test
 ### Publier le package
 
 ```bash
-npm publish
+npm version minor | npm version patch
 ```
 
 ## Guide de l'Utilisateur
