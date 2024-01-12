@@ -1,4 +1,4 @@
-import { commands, processCommand } from "../src/app/main"; // Remplacez 'your-file' par le nom de votre fichier
+import { commands, processCommand } from "../src/app/main";
 
 // Mock de la fonction feedbackFunction
 const mockFeedbackFunction = jest.fn();
@@ -47,7 +47,7 @@ describe("processCommand", () => {
       "Executed command: scroll down"
     );
 
-    // Ajoutez ici des tests pour les autres commandes
+    // TODO: Ajoutez ici des tests pour les autres commandes
   });
 
   it("should give feedback when command is not understood", () => {

@@ -13,10 +13,7 @@
     "command",
     "recognition"
   ],
-  "author": [
-    "Adil EL MOBACHI",
-    "Pierre-Antoine BAIZEAU"
-  ],
+  "author": "Adil EL MOBACHI, Pierre-Antoine BAIZEAU",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.23.2",
