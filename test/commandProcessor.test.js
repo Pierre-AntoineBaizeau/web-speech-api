@@ -1,4 +1,5 @@
-import { commands, processCommand } from "../src/app/main";
+import { processCommand } from "../src/commandProcessor";
+import { commands } from "../src/commands";
 
 // Mock de la fonction feedbackFunction
 const mockFeedbackFunction = jest.fn();
