@@ -24,8 +24,10 @@ export function webVoiceHub() {
     const recognition = new (window.SpeechRecognition ||
       window.webkitSpeechRecognition)();
     recognition.interimResults = true;
+    console.log('recognition', recognition);
 
     recognition.onresult = (event) => {
+      console.log(event, "event");
       let last = event.results.length - 1;
       let text = event.results[last][0].transcript;
 
